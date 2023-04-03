@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import Box from './components/Box';
 
 function App() {
   // useSelector는 매개변수 값에 함수값을 받음 !!
@@ -18,6 +19,7 @@ function App() {
     <div className="App">
       <h1>{count}</h1>
       <button onClick={increase}>증가</button>
+      <Box />
     </div>
   );
 }
