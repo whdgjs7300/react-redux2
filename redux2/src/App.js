@@ -1,13 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
 import {useState} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 
 function App() {
-
-  const [count,setCount] = useState(0);
+  // useSelector는 매개변수 값에 함수값을 받음 !!
+  // 또한 store값에 있는 state값을 가져올 때 사용
+  const count = useSelector(state=> state.count);
+  // 액션함수 실행을 위한 함수 (useDispatch);
+  const dispatch = useDispatch();
 
   const increase = () => {
-    setCount(count+1);
+    dispatch({type : "INCREMENT"});
   }
 
   return (
